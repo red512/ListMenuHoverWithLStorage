@@ -1,0 +1,42 @@
+
+<mat-list class="shadow ">
+  <h1 class="trustPeersToDo">TrustPeers Todo List Example</h1>
+  <br>
+  <mat-list-item *ngFor="let message of items">
+    <p matLine class="title">{{message.title}}</p>
+    <p matLine class="secondary"> {{message.secondaryText}} </p>
+    <mat-checkbox color="primary" class="checkbox pl-4"></mat-checkbox>
+
+      <button class="btn" mat-icon-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (mouseover)="menuTrigger.openMenu()">
+        <mat-icon>drag_handle</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <span (mouseleave)="menuTrigger.closeMenu()">
+
+        <button mat-menu-item>
+          <span>Rename</span>
+        </button>
+        <button mat-menu-item (click)="removeItem()">
+          <span>Delete</span>
+        </button>
+        <button mat-menu-item>
+          <span>Done/Undone</span>
+        </button>
+
+      </span>
+      </mat-menu>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+
+
+
+  <button class="btn btn-link addSign" mat-raised-button (click)="openDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+
+
+</mat-list>
+
+
+
+

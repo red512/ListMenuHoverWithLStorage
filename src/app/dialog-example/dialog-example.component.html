@@ -1,0 +1,15 @@
+<div class="container">
+  <form (submit)="addToList()" class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>An Example Task</mat-label>
+      <input matInput [(ngModel)]="title" type="title" id="title" name="title" class="form-control" placeholder="title">
+    </mat-form-field>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Secondary text</mat-label>
+      <textarea matInput [(ngModel)]="secondaryText" type="secondaryText" id="secondaryText" name="secondaryText" class="form-control" placeholder="secondaryText"></textarea>
+    </mat-form-field>
+    <button class="btn btn-lg btn-primary btn-block" mat-dialog-close="true" type="submit">Send</button>
+  </form>
+
+</div>
