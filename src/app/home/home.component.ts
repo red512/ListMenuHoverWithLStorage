@@ -1,3 +1,4 @@
+import { UpdateDialogComponent } from './../update-dialog/update-dialog.component';
 import { DialogExampleComponent } from './../dialog-example/dialog-example.component';
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -13,6 +14,8 @@ export class HomeComponent {
 
   title: string
   secondaryText: string
+  index: number = 0
+  updatedTask
 
   constructor(public dialog: MatDialog ){}
 
@@ -26,12 +29,26 @@ export class HomeComponent {
     }
  }
 
-  removeItem( ) {
+  removeItem( index ) {
+    // this.items.splice(index, index)
+    console.log(index);
+    console.log(JSON.stringify(this.items[index]))
+    // localStorage.removeItem(this.items[index])
+    this.items.splice(index, 1);
+    console.log("-------------------------");
+    console.log(this.items);
+    localStorage.setItem('items', JSON.stringify(this.items));
+
+
    }
 
 
   openDialog() {
     let dialogRef = this.dialog.open(DialogExampleComponent);
+
+  }
+  openDialogUpdate() {
+    let dialogRef = this.dialog.open(UpdateDialogComponent);
 
   }
 

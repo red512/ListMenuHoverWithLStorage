@@ -2,7 +2,7 @@
 <mat-list class="shadow ">
   <h1 class="trustPeersToDo">TrustPeers Todo List Example</h1>
   <br>
-  <mat-list-item *ngFor="let message of items">
+  <mat-list-item *ngFor="let message of items; let i = index">
     <p matLine class="title">{{message.title}}</p>
     <p matLine class="secondary"> {{message.secondaryText}} </p>
     <mat-checkbox color="primary" class="checkbox pl-4"></mat-checkbox>
@@ -14,9 +14,9 @@
       <span (mouseleave)="menuTrigger.closeMenu()">
 
         <button mat-menu-item>
-          <span>Rename</span>
+          <span (click)="openDialogUpdate()">Rename</span>
         </button>
-        <button mat-menu-item (click)="removeItem()">
+        <button mat-menu-item (click)="removeItem(i)">
           <span>Delete</span>
         </button>
         <button mat-menu-item>

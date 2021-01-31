@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-dialog-example',
-  templateUrl: './dialog-example.component.html',
-  styleUrls: ['./dialog-example.component.scss']
+  selector: 'app-update-dialog',
+  templateUrl: './update-dialog.component.html',
+  styleUrls: ['./update-dialog.component.scss']
 })
-export class DialogExampleComponent implements OnInit {
-
+export class UpdateDialogComponent implements OnInit {
 
   public items=JSON.parse(localStorage.getItem("items"));
 
+  test
   title: string
   secondaryText: string
   done: boolean
@@ -27,25 +27,15 @@ export class DialogExampleComponent implements OnInit {
   public newTask;
 
 
-  public addToList() {
+  public updateItem(index) {
       this.newTask = {
       title: this.title,
       secondaryText: this.secondaryText,
       done: false
     }
-    if (this.newTask == '') {
-    } else {
-      if (!localStorage.getItem('items')){
-        localStorage.setItem('items', JSON.stringify(this.items));
-      }
-      this.items.push(this.newTask);
-      console.log(this.items);
+      this.items[index] = this.items
       localStorage.setItem('items', JSON.stringify(this.items))
-      this.newTask = '';
-    }
     window.location.reload();
   }
-
-
 
 }

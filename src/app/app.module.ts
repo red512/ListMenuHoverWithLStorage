@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { HomeComponent } from './home/home.component';
 import { DialogExampleComponent } from './dialog-example/dialog-example.component';
+import { UpdateDialogComponent } from './update-dialog/update-dialog.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { DialogExampleComponent } from './dialog-example/dialog-example.componen
     AppComponent,
     HomeComponent,
     DialogExampleComponent,
+    UpdateDialogComponent,
   ],
   entryComponents: [DialogExampleComponent],
   imports: [
