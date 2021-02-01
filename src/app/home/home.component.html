@@ -12,11 +12,10 @@
       </button>
       <mat-menu #menu="matMenu" [overlapTrigger]="false">
       <span (mouseleave)="menuTrigger.closeMenu()">
-
         <button mat-menu-item>
           <span (click)="openDialogUpdate()">Rename</span>
         </button>
-        <button mat-menu-item (click)="removeItem(i)">
+        <button mat-menu-item  (click)="removeItem(i)">
           <span>Delete</span>
         </button>
         <button mat-menu-item>

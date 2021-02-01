@@ -9,7 +9,7 @@ export class UpdateDialogComponent implements OnInit {
 
   public items=JSON.parse(localStorage.getItem("items"));
 
-  test
+  index
   title: string
   secondaryText: string
   done: boolean
